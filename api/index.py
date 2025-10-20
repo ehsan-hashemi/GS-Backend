@@ -20,6 +20,10 @@ app.config["JWT_EXPIRE_MINUTES"] = int(os.environ.get("JWT_EXPIRE_MINUTES", "120
 # Initialize DB on cold start
 init_db()
 
+@app.route("/api/hello")
+def hello():
+    return {"msg": "Hello from Flask on Vercel!"}
+
 # Health
 @app.get("/api/health")
 def health():
